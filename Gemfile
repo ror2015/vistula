@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+gem 'devise'
 gem 'haml'
 gem 'haml-rails'
 gem 'jquery-rails'
