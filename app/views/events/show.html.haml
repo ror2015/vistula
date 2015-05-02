@@ -2,4 +2,14 @@
 %h1=@event.title
 %p=@event.description
 %p=link_to 'back', root_path
+
+-@attendences.each do |event|
+  =event.user_id
+  =event.event_id
+  =event.created_at
+  %br/
+%hr
+-if user_signed_in?
+  =simple_form_for @attendence, url: event_attendences_path(@event)  do |f|
+    =f.button :submit
 /%p  =link_to 'Attendence', new_attendence_path

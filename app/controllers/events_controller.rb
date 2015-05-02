@@ -6,7 +6,8 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @attendences=Attendence.all
+    @attendence= :find_attendence
   end
 
   private
@@ -14,4 +15,9 @@ class EventsController < ApplicationController
   def find_event
     @event=Event.find(params[:id])
   end
+
+  def find_attendence
+    @attendence=Attendence.find(params[:id])
+  end
+
 end
