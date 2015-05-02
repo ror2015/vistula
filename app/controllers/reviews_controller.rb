@@ -41,10 +41,7 @@ class ReviewsController < ApplicationController
   end
 
   # DELETE /reviews/1
-  def destroy
-    @review.destroy
-    redirect_to reviews_url, notice: 'Review was successfully destroyed.'
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
