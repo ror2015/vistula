@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @club.name
+%p
+  %b Description:
+  = @club.description
+%p
+  %b Logo:
+  = @club.logo
+
+= link_to 'Edit', edit_club_path(@club)
+\|
+= link_to 'Back', clubs_path
