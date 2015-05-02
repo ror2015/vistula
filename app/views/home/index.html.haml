@@ -1,1 +1,6 @@
-Home page
+%h1 Home page
+
+-@events.each do |event|
+  %p=event.title
+  %p=event.description
+  %p=link_to 'Show', event
