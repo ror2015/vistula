@@ -9,5 +9,7 @@
 %p
   %b Logo:
   = @club.logo
+
+= link_to 'Edit', edit_admin_club_path(@club)
 \|
-= link_to 'Back', clubs_path
+= link_to 'Back', admin_clubs_path
