@@ -34,7 +34,7 @@ class Admin::ClubsController < Admin::BaseController
   # PATCH/PUT /clubs/1
   def update
     if @club.update(club_params)
-      redirect_to @club, notice: 'Club was successfully updated.'
+      redirect_to [:admin, @club], notice: 'Club was successfully updated.'
     else
       render :edit
     end

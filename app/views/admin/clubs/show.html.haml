@@ -8,7 +8,7 @@
   = @club.description
 %p
   %b Logo:
-  = @club.logo
+  = image_tag @club.logo, size: '100x150'
 
 = link_to 'Edit', edit_admin_club_path(@club)
 \|

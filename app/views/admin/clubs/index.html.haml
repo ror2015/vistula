@@ -15,7 +15,7 @@
       %tr
         %td= club.name
         %td= club.description
-        %td= club.logo
+        %td= image_tag club.logo, size: '100x150'
         %td= link_to 'Show', admin_club_path(club)
         %td= link_to 'Edit', edit_admin_club_path(club)
         %td= link_to 'Destroy', admin_club_path(club), :method => :delete, :data => { :confirm => 'Are you sure?' }
