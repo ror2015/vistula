@@ -16,8 +16,6 @@ class ReviewsController < ApplicationController
   end
 
   # GET /reviews/1/edit
-  def edit
-  end
 
   # POST /reviews
   def create
@@ -25,7 +23,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save
-      redirect_to @review, notice: 'Review was successfully created.'
+      redirect_to @reviews
     else
       render :new
     end
