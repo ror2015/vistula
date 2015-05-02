@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @attendences=Attendence.all
+    @attendences=Attendence.where(event_id: @event.id)
     @attendence= :find_attendence
   end
 

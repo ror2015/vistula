@@ -15,7 +15,7 @@ class AttendencesController < ApplicationController
     @attendence.event_id=@event.id
 
     if @attendence.save
-      redirect_to root_path
+      redirect_to @event
     else
       render 'new'
     end
