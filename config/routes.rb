@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   namespace :admin do
+    resources :reviews
     root 'home#index'
   end
 end
+
