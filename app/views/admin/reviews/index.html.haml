@@ -6,6 +6,7 @@
       %th Name
       %th Group
       %th Content
+      %th User id
       %th
       %th
       %th
@@ -16,6 +17,7 @@
         %td= review.name
         %td= review.group_id
         %td= review.content
+        %td= review.user_id
         %td= link_to 'Show', review
         %td= link_to 'Edit', edit_review_path(review)
         %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }
