@@ -1,9 +1,10 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   # GET /reviews
   def index
-    @reviews = Review.all
+    @reviews = Review.where(user_id: current_user.id)
   end
 
   # GET /reviews/1
