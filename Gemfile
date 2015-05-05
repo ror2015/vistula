@@ -11,9 +11,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 
-platforms :mswin do
-  gem 'therubyracer', platforms: :ruby
-end
+
 
 group :development, :test do
   gem 'spring'
