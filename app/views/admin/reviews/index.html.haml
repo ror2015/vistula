@@ -1,27 +1,30 @@
-%h1 Listing reviews
+.row
+  %center
+    %h1 All Reviews
+  .col-lg-3
+  .col-lg-6
+    %br
+    .top
+      = link_to 'New Review', new_review_path, class: "btn btn-info btn-xs btn-block"
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Group
-      %th Content
-      %th User id
-      %th
-      %th
-      %th
+    %br
+    .middle
+      %tbody
+        - @reviews.each do |review|
+          .middlee
+            ="Name:"
+            = review.name
+            ="Group:"
+            = review.group_id
+            ="Content:"
+            = review.content
+            = review.user_id
+            = link_to 'Show', review
+            = link_to 'Edit', edit_review_path(review)
+            = link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  %tbody
-    - @reviews.each do |review|
-      %tr
-        %td= review.name
-        %td= review.group_id
-        %td= review.content
-        %td= review.user_id
-        %td= link_to 'Show', review
-        %td= link_to 'Edit', edit_review_path(review)
-        %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Review', new_review_path
+
+
+

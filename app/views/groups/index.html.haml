@@ -1,21 +1,23 @@
-%h1 Listing groups
+.row
+  %center
+    %h1 Groups
+  .col-lg-3
+  .col-lg-6
+    %br
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
 
-  %tbody
-    - @groups.each do |group|
-      %tr
-        %td= group.name
-        %td= link_to 'Show', group
-        %td= link_to 'Edit', edit_group_path(group)
-        %td= link_to 'Destroy', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %br
+    .middle
+      %tbody
+        - @groups.each do |group|
+          .middle
+            %center
+              = group.name
 
-%br
 
-= link_to 'New Group', new_group_path
+
+
+
+
+
+
