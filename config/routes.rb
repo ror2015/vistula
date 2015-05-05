@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :'events' do
-    resources :'attendences'
+    resources :'attendences' do
+      collection do
+        get :unattend
+        get :attend
+      end
+    end
   end
 
   namespace :admin do
