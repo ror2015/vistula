@@ -35,8 +35,12 @@ ActiveRecord::Schema.define(version: 20150502134203) do
     t.string   "CV"
     t.integer  "user_id"
     t.integer  "offer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "CV_file_name"
+    t.string   "CV_content_type"
+    t.integer  "CV_file_size"
+    t.datetime "CV_updated_at"
   end
 
   add_index "apply_forms", ["offer_id"], name: "index_apply_forms_on_offer_id"

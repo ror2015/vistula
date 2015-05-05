@@ -7,6 +7,10 @@ class OffersController < ApplicationController
 
   # GET /offers/1
   def show
+    @apply_form = @offer.apply_forms.build
+    #the same : ApplyForm.new(offer_id: @offer.id)
+    @apply_forms = ApplyForm.all
+                    #@offer.apply_forms
   end
 
   # GET /offers/new
@@ -23,7 +27,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
 
     if @offer.save
-      redirect_to @offer, notice: 'er was successfully created.'
+      redirect_to @offer, notice: 'offer was successfully created.'
     else
       render :new
     end
@@ -43,6 +47,7 @@ class OffersController < ApplicationController
     @offer.destroy
     redirect_to offers_url, notice: 'er was successfully destroyed.'
   end
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.

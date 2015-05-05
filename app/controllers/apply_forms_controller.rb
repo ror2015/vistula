@@ -49,6 +49,16 @@ class ApplyFormsController < ApplicationController
     redirect_to apply_form_url, notice: 'apply_form was successfully destroyed.'
   end
 
+  def CV_download
+   @apply_form = ApplyForm.find(params[:id])
+   file_path = @apply_form.CV_file_name
+    if !file_path.nil?
+      send_file "#{Rails.root}/public/system/CVs/#{@apply_form.id}/original/#{file_path}", :x_sendfile => true
+    else
+      redirect_to offers_url
+    end
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def apply_form

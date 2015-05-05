@@ -8,8 +8,13 @@
   %b Requinments:
   = @offer.requinments
 
-%h3
-=render @offer.apply_forms
+  %p Recived applications:
+  - @offer.apply_forms.each do |apply_form|
+    %p= apply_form.CV_file_name
+
+  %p Number of applications is
+  %h2 
+    = @offer.apply_forms.count    
 
 
 %h3 Reply to thread
