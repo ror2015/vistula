@@ -1,0 +1,20 @@
+%p
+  %b Position:
+  = @offer.position
+
+  %b Description:
+  = @offer.description
+  
+  %b Requinments:
+  = @offer.requinments
+
+%h3
+=render @offer.apply_forms
+
+
+%h3 Reply to thread
+= render "apply_forms/form"
+
+= link_to 'Edit', edit_offer_path(@offer)
+\|
+= link_to 'Back', offers_path
