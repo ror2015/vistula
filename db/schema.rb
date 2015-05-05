@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501221138) do
+ActiveRecord::Schema.define(version: 20150502134203) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,29 @@ ActiveRecord::Schema.define(version: 20150501221138) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "apply_forms", force: :cascade do |t|
+    t.string   "CV"
+    t.integer  "user_id"
+    t.integer  "offer_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "CV_file_name"
+    t.string   "CV_content_type"
+    t.integer  "CV_file_size"
+    t.datetime "CV_updated_at"
+  end
+
+  add_index "apply_forms", ["offer_id"], name: "index_apply_forms_on_offer_id"
+  add_index "apply_forms", ["user_id"], name: "index_apply_forms_on_user_id"
+
+  create_table "offers", force: :cascade do |t|
+    t.string   "position"
+    t.text     "description"
+    t.text     "requinments"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

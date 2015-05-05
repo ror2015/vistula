@@ -1,0 +1,2 @@
+module ApplyFormsHelper
+end

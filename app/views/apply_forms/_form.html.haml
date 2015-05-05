@@ -1,0 +1,4 @@
+= simple_form_for(@offer.apply_forms.build) do |f|
+	Document (pdf): #{f.file_field :CV}
+	= f.input :offer_id
+	= f.submit
