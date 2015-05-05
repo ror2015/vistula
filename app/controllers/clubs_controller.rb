@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
+  before_action :set_club, only: [:show, :edit, :update, :destroy, :join]
 
   # GET /clubs
   def index
@@ -8,6 +8,15 @@ class ClubsController < ApplicationController
 
   # GET /clubs/1
   def show
+  end
+
+  def join
+    @club.club_users.build(user_id: current_user.id, status: 'pending')
+    if @club.save
+      redirect_to @club, notice: 'Request was sent successfully.'
+    else
+      render :index
+    end
   end
 
   # GET /clubs/new

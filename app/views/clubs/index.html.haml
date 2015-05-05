@@ -16,7 +16,7 @@
         %td= image_tag club.logo, size: '100x150'
         %td
           - if current_user
-            = 'Join'
+            = link_to 'Join', join_club_path(club)
 
 %br
 

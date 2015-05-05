@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :clubs
+  resources :clubs do
+    member do
+      get :join
+    end
+  end
   namespace :admin do
     resources :clubs
   end
