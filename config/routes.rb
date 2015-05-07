@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
   root 'home#index'
+  get '/about', to: 'home#about'  
   resources :announcements
 
   resources :'events' do
