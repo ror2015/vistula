@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'home#index'
+  resources :announcements
 
   resources :'events' do
     resources :'attendences' do
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'home#index'
+    resources :announcements
 
     resources :'events' do
       resources :'attendences'
