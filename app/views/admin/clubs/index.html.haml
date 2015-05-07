@@ -1,0 +1,31 @@
+%br
+= current_user.email
+%br
+= current_user.id
+
+
+%h1 Listing clubs
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Logo
+      %th
+      %th
+      %th
+
+  %tbody
+    - @clubs.each do |club|
+      %tr
+        %td= club.name
+        %td= club.description
+        %td= image_tag club.logo, size: '100x150'
+        %td= link_to 'Show', admin_club_path(club)
+        %td= link_to 'Edit', edit_admin_club_path(club)
+        %td= link_to 'Destroy', admin_club_path(club), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Club', new_admin_club_path

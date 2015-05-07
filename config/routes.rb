@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :groups
   devise_for :admins
   devise_for :users
-
+  resources :clubs do
+    member do
+      get :join
+    end
+  end
   root 'home#index'
   resources :announcements
 
@@ -18,6 +22,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :reviews
+    resources :clubs
+
     root 'home#index'
     resources :announcements
 
