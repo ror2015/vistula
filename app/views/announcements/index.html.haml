@@ -1,0 +1,8 @@
+%h1 Listing announcements
+.col-md-12
+  - @announcements.each do |announcement|
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title= link_to announcement.title, [:admin, announcement]
+      .panel-body
+        = announcement.content

@@ -1,0 +1,31 @@
+.row
+  %center
+    %h1
+      = @review.name
+  .col-lg-3
+  .col-lg-6
+    %br
+    .top
+      = link_to 'New Review', new_review_path, class: "btn btn-info btn-xs btn-block"
+      %br
+
+    %br
+
+    .middle
+      .middlee
+
+        %center
+          = "Group: "
+          = @review.group_id
+          = link_to 'Edit', edit_review_path(@review), class: "btn btn-xs btn-default"
+
+      .middlee
+        %center
+          = @review.content
+
+
+
+
+
+
+
