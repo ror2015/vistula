@@ -1,0 +1,23 @@
+.row
+  %center
+    %h1 Groups
+  .col-lg-3
+  .col-lg-6
+    %br
+
+
+    %br
+    .middle
+      %tbody
+        - @groups.each do |group|
+          .middle
+            %center
+              = group.name
+
+
+
+
+
+
+
+

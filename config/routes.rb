@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :groups
   devise_for :admins
   devise_for :users
 
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :reviews
     root 'home#index'
     resources :announcements
 
@@ -23,3 +26,4 @@ Rails.application.routes.draw do
     end
   end
 end
+

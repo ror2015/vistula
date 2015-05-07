@@ -1,0 +1,10 @@
+= simple_form_for(@review) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :group
+    = f.input :content
+
+  .form-actions
+    = f.button :submit
