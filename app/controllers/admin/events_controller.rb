@@ -36,7 +36,7 @@ before_filter :find_event, only: [:show,:update,:edit,:destroy]
 
   private
     def events_params
-      params.require(:event).permit(:title,:description,:start,:end)
+      params.require(:event).permit(:title,:description,:start_at,:end_at)
     end
 
     def find_event
