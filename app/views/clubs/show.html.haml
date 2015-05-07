@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @club.name
+%p
+  %b Description:
+  = @club.description
+%p
+  %b Logo:
+  = image_tag @club.logo, size: '100x150'
+\|
+
+= link_to 'Back', clubs_path

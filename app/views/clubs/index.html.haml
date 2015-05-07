@@ -1,0 +1,22 @@
+%h1 Listing clubs
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Logo
+      %th
+
+  %tbody
+    - @clubs.each do |club|
+      %tr
+        %td= link_to club.name, club_path(club)
+        %td= link_to club.description, club_path(club)
+        %td= image_tag club.logo, size: '100x150'
+        %td
+          - if current_user
+            = link_to 'Join', join_club_path(club)
+
+%br
+

@@ -13,6 +13,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'font-awesome-sass'
 
 
+gem 'carrierwave'
+
 
 group :development, :test do
   gem 'spring'
