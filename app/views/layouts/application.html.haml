@@ -2,22 +2,12 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}
-      %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-        %meta{:content => "vOne - Free Business HTML5 Responsive Website", :name => "description"}
-          %meta{:content => "webThemez.com", :name => "author"}
-            %title Vistula
-            %link{:href => "assets/favicon.png", :rel => "favicon"}
-              %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :media => "screen", :rel => "stylesheet"}
-                %link{:href => "assets/bootstrap.min.css", :rel => "stylesheet"}
-                  %link{:href => "assets/font-awesome.css.scss.erb", :rel => "stylesheet"}
-                    / Custom styles for our template
-                    %link{:href => "assets/bootstrap-theme.css", :media => "screen", :rel => "stylesheet"}
-                      %link{:href => "assets/da-slider.css", :rel => "stylesheet", :type => "text/css"}/
-                      %link{:href => "assets/style.css", :rel => "stylesheet"}
-                        / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
-                        /[if lt IE 9]
-                          <script src="assets/javascripts/js/html5shiv.js"></script>
-                          <script src="assets/javascripts/js/respond.min.js"></script>
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title Vistula
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :media => "screen", :rel => "stylesheet"}
 
   %body
     / Fixed navbar
