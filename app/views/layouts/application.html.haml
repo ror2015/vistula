@@ -21,32 +21,29 @@
             %span.icon-bar
           %a.navbar-brand{:href => "index.html"}
           #logo
-            %img{:alt => "logo_vistula", :src => "/assets/logo_vistula.jpg"}
+            = image_tag 'logo_vistula.jpg', size: '100'
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.pull-right
-            %li.active
-              %a{:href => "#"} Home
+            %li.active= link_to 'Home', root_path
+            %li= link_to 'Announcements', announcements_path
+            %li= link_to 'Career', '#'
+            %li= link_to 'Clubs', clubs_path
+            %li= link_to 'Events', events_path
+            %li= link_to 'Ideas & Complaints', reviews_path
             %li
-              %a{:href => "about.html"} About
-            / <li><a href="services.html">Services</a></li>
-            / <li><a href="portfolio.html">Portfolio</a></li>
-            /
-              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-              <li><a href="sidebar-right.html">Right Sidebar</a></li>
-              <li><a href="#">Dummy Link1</a></li>
-              <li><a href="#">Dummy Link2</a></li>
-              <li><a href="#">Dummy Link3</a></li>
-              </ul>
-              </li>
-            / <li><a href="contact.html">Contact</a></li>
+              - if current_user
+                = link_to 'Log out', destroy_user_session_path, :method => :delete
+              - else
+                = link_to "Log in", new_user_session_path unless controller.devise_controller?
         / /.nav-collapse
     / /.navbar
-    - if current_user
-      = link_to 'Log out', destroy_user_session_path, :method => :delete
-    - else
-      = link_to "Log in", new_user_session_path unless controller.devise_controller?
-    = yield
+    %header.secondary#head
+    .container
+      .row
+        .col-sm-12.maincontent
+          %header.page-header
+            %h1.page-title
+          = yield
     / Intro
     /
       <section class="herotxt">
@@ -111,47 +108,47 @@
       </div>
       </div>
     / container
-    %section.sectionBox
-      .container
-        .row
-          .col-md-6
-            .heading
-              %h2 About Us
-              %br/
-            %p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            %blockquote.blockquote-1
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid
-              %small
-                Someone famous in
-                %cite{:title => "Source Title"} Source Title
-          .col-md-6
-            .blockquote-box.blockquote-info.clearfix
-              .heading
-                %h2 Featured Services
-                %br/
-              .square.pull-left
-                %i.fa.fa-pencil-square-o.fa-3x.circle
-              %h4
-                Planning
-              %p
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                ante.
-            .blockquote-box.blockquote-success.clearfix
-              .square.pull-left
-                %i.fa.fa-cloud-download.fa-3x.circle
-              %h4
-                Marketing
-              %p
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                ante.
-            .blockquote-box.blockquote-primary.clearfix
-              .square.pull-left
-                %i.fa.fa-university.fa-3x.circle
-              %h4
-                Growth Invest
-              %p
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                ante.
+    -#%section.sectionBox
+    -#  .container
+    -#    .row
+    -#      .col-md-6
+    -#        .heading
+    -#          %h2 About Us
+    -#          %br/
+    -#        %p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+    -#        %blockquote.blockquote-1
+    -#          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid
+    -#          %small
+    -#            Someone famous in
+    -#            %cite{:title => "Source Title"} Source Title
+    -#      .col-md-6
+    -#        .blockquote-box.blockquote-info.clearfix
+    -#          .heading
+    -#            %h2 Featured Services
+    -#            %br/
+    -#          .square.pull-left
+    -#            %i.fa.fa-pencil-square-o.fa-3x.circle
+    -#          %h4
+    -#            Planning
+    -#          %p
+    -#            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+    -#            ante.
+    -#        .blockquote-box.blockquote-success.clearfix
+    -#          .square.pull-left
+    -#            %i.fa.fa-cloud-download.fa-3x.circle
+    -#          %h4
+    -#            Marketing
+    -#          %p
+    -#            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+    -#            ante.
+    -#        .blockquote-box.blockquote-primary.clearfix
+    -#          .square.pull-left
+    -#            %i.fa.fa-university.fa-3x.circle
+    -#          %h4
+    -#            Growth Invest
+    -#          %p
+    -#            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+    -#            ante.
     %footer#footer.top-space
       .footer1
         .container
