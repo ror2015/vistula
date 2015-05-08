@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  resources :reviews
-  resources :groups
   devise_for :admins
   devise_for :users
+
+  resources :reviews
+  resources :groups
   resources :clubs do
     member do
       get :join
     end
   end
   root 'home#index'
-  get '/about', to: 'home#about'  
   resources :announcements
 
   resources :'events' do
