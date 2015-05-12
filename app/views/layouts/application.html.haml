@@ -26,10 +26,15 @@
           %ul.nav.navbar-nav.pull-right
             %li.active= link_to 'Home', root_path
             %li= link_to 'Announcements', announcements_path
-            %li= link_to 'Career', '#'
+            %li= link_to t('menu.career'), '#'
             %li= link_to 'Clubs', clubs_path
             %li= link_to 'Events', events_path
             %li= link_to 'Ideas & Complaints', reviews_path
+            - if I18n.locale == :en
+              %li= link_to 'Polish', root_path(locale: 'pl')
+            - else
+              %li= link_to 'English', root_path(locale: 'en')
+
             %li
               - if current_user
                 = link_to 'Log out', destroy_user_session_path, :method => :delete
