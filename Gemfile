@@ -17,6 +17,8 @@ gem 'carrierwave'
 
 
 group :development, :test do
+  gem "capybara"
+  gem 'launchy'
   gem 'rspec-rails', '~> 3.0'
   gem 'spring'
   gem 'sqlite3'
