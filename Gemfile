@@ -17,6 +17,7 @@ gem 'carrierwave'
 
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
   gem 'spring'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
