@@ -4,6 +4,10 @@ class AnnouncementsController < Admin::ApplicationController
   # GET /announcements
   def index
     @announcements = Announcement.all
+    respond_to do |format|
+      format.json {render json: @announcements.to_json}
+      format.html
+    end
   end
 
   def show
